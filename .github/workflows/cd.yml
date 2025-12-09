@@ -16,7 +16,6 @@ jobs:
       run: echo "${{ github.token }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
     - name: Build and push
       run: |
-        IMAGE="ghcr.io/${{ steps.vars.outputs.owner_lc }}/python-app:latest"
-        docker build -t $IMAGE .
-        docker push $IMAGE
+        docker build -t ghcr.io/${{ github.repository_owner }}/python-app:latest .
+        docker push ghcr.io/${{ github.repository_owner }}/python-app:latest
   
