@@ -18,7 +18,7 @@ jobs:
 
       - name: Build and push
         run: |
-          IMAGE="ghcr.io/${{ env.OWNER_LC }}/python-app:latest"
+          IMAGE="ghcr.io/${{ env.OWNER_LC }}/python-app"
           docker build -t "$IMAGE:latest" .
           docker tag "$IMAGE:latest" "$IMAGE:${{ env.TS }}"
           docker push "$IMAGE:latest"
